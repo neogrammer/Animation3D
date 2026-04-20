@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\dev\animation\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\Framebuffer.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\VertexBuffer.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\UniformBuffer.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\Texture.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\UserInterface.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\tools\Logger.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\tools\Timer.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\src\glad.c">
+      <Filter>Source Files\third_party\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui_draw.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui_impl_glfw.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui_tables.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\third_party\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\window\Window.cpp">
+      <Filter>Source Files\window</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\model\Model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\Shader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\animation\opengl\OGLRenderer.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\Camera.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\dev\animation\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DC978859-3B78-3978-9E88-E15E64A9EC30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{fb3cb3cc-9ae7-4d2d-aafc-32b0b0943f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools">
+      <UniqueIdentifier>{71e017a0-5701-4a18-aeb5-54f31847459e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\third_party">
+      <UniqueIdentifier>{aeb7e23e-e52c-43f1-85ac-76fb20097190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\third_party\imgui">
+      <UniqueIdentifier>{c0c17955-1f37-49e8-8efc-07ba44fdf843}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\third_party\glad">
+      <UniqueIdentifier>{175b0c4b-66a9-4064-ab67-3ca3fa379df5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\window">
+      <UniqueIdentifier>{67900277-d4d2-4cb6-8f0c-e3f54806dec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\opengl">
+      <UniqueIdentifier>{4af3955b-cd61-45ed-a9f5-8a3c81ef7bde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{1920a78d-faec-46c4-87a4-7c3a368b0855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{6d67504d-339a-4e89-b3cf-a471e990a4bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\shader">
+      <UniqueIdentifier>{8927e44a-ffdd-41a3-be76-8c3e209f7448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\model">
+      <UniqueIdentifier>{01c1ddeb-f010-4608-9a8d-cae88594e589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shader">
+      <UniqueIdentifier>{80c088b6-439b-43c3-bc3a-34e2414c7a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{4ed7264e-0bb6-41a5-87a4-f79d4c93a8e3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\crate.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\basic.frag">
+      <Filter>assets\shader</Filter>
+    </None>
+    <None Include="shader\basic.vert">
+      <Filter>assets\shader</Filter>
+    </None>
+    <None Include="shader\changed.frag">
+      <Filter>assets\shader</Filter>
+    </None>
+    <None Include="shader\changed.vert">
+      <Filter>assets\shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
