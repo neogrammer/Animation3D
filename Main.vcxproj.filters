@@ -64,6 +64,9 @@
     <ClCompile Include="src\tiny_gltf.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="model\GltfModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\dev\animation\CMakeLists.txt" />
@@ -72,5 +75,45 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{DC978859-3B78-3978-9E88-E15E64A9EC30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{d6ee58ac-34c5-4599-8127-ab2e79653b73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{ac3d7e23-696a-4980-9f5b-cd6d76cc67d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="textures">
+      <UniqueIdentifier>{b5626aef-30a9-4514-a814-7545a27f8009}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\gltf.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\gltf.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\changed.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\changed.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="assets\Woman.gltf">
+      <Filter>assets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\crate.png">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\Woman.png">
+      <Filter>textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

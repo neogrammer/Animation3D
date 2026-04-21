@@ -356,7 +356,27 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\dev\animation\tools\Logger.cpp" />
     <ClCompile Include="C:\dev\animation\tools\Timer.cpp" />
     <ClCompile Include="C:\dev\animation\window\Window.cpp" />
+    <ClCompile Include="model\GltfModel.cpp" />
     <ClCompile Include="src\tiny_gltf.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Woman.gltf" />
+    <None Include="shader\basic.frag" />
+    <None Include="shader\basic.vert" />
+    <None Include="shader\changed.frag" />
+    <None Include="shader\changed.vert" />
+    <None Include="shader\gltf.frag">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </None>
+    <None Include="shader\gltf.vert">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\crate.png" />
+    <Image Include="textures\Woman.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

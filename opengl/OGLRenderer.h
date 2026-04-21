@@ -15,6 +15,7 @@
 #include "Camera.h"
 
 #include "OGLRenderData.h"
+#include "GltfModel.h"
 
 
 class OGLRenderer {
@@ -38,6 +39,7 @@ class OGLRenderer {
     Timer mFrameTimer{};
     Timer mMatrixGenerateTimer{};
     Timer mUploadToUBOTimer{};
+    Timer mUploadToVBOTimer{};
     Timer mUIGenerateTimer{};
     Timer mUIDrawTimer{};
 
@@ -60,5 +62,8 @@ class OGLRenderer {
     bool mMouseLock = false;
     int mMouseXPos = 0;
     int mMouseYPos = 0;
+
+    Shader mGltfShader{};
+    std::shared_ptr<GltfModel> mGltfModel = nullptr;
 
 };

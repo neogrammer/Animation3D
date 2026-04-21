@@ -46,4 +46,6 @@ struct OGLRenderData {
 
   glm::vec3 rdCameraWorldPosition = { 0.f,0.f,2.f };
 
+  unsigned int rdGltfTriangleCount = 0;
+
 };

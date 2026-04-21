@@ -8,10 +8,10 @@ void Texture::cleanup() {
   glDeleteTextures(1, &mTexture);
 }
 
-bool Texture::loadTexture(std::string textureFilename) {
+bool Texture::loadTexture(std::string textureFilename, bool flipImage) {
   mTextureName = textureFilename;
 
-  stbi_set_flip_vertically_on_load(true);
+  stbi_set_flip_vertically_on_load(flipImage);
   unsigned char *textureData = stbi_load(textureFilename.c_str(), &mTexWidth, &mTexHeight, &mNumberOfChannels, 0);
 
   if (!textureData) {

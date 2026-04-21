@@ -88,6 +88,12 @@ bool OGLRenderer::init(unsigned int width, unsigned int height) {
       Logger::log(1, "%s: changed shader loading failed\n", __FUNCTION__);
       return false;
   }
+  if (!mGltfShader.loadShaders("shader/gltf.vert", "shader/gltf.frag")) {
+      Logger::log(1, "%s: gltf shader loading failed\n", __FUNCTION__);
+      return false;
+  }
+
+
   Logger::log(1, "%s: shaders succesfully loaded\n", __FUNCTION__);
 
 
@@ -100,6 +106,19 @@ bool OGLRenderer::init(unsigned int width, unsigned int height) {
   glEnable(GL_DEPTH_TEST);
 
   mFrameTimer.start();
+
+  mGltfModel = std::make_shared<GltfModel>();
+  std::string modelFilename = "assets/Woman.gltf";
+  std::string modelTexFilename = "textures/Woman.png";
+
+  if (!mGltfModel->loadModel(mRenderData, modelFilename, modelTexFilename)) {
+      return false;
+  }
+  mGltfModel->uploadIndexBuffer();
+
+
+
+
 
   return true;
 }
@@ -169,12 +188,12 @@ void OGLRenderer::draw() {
 
   if (!mRenderData.rdUseChangedShader) {
       mBasicShader.use();
-      model = glm::rotate(glm::mat4(1.0f), t, glm::vec3(0.0f, 0.0f, 1.0f));
+      //model = glm::rotate(glm::mat4(1.0f), t, glm::vec3(0.0f, 0.0f, 1.0f));
 
   }
   else {
       mChangedShader.use();
-      model = glm::rotate(glm::mat4(1.0f), -t, glm::vec3(0.0f, 0.0f, 1.0f));
+      //model = glm::rotate(glm::mat4(1.0f), -t, glm::vec3(0.0f, 0.0f, 1.0f));
 
   }
   mViewMatrix = mCamera.getViewMatrix(mRenderData) * model;
@@ -184,12 +203,25 @@ void OGLRenderer::draw() {
   mUniformBuffer.uploadUboData(mViewMatrix, mProjectionMatrix);
   mRenderData.rdUploadToUBOTime = mUploadToUBOTimer.stop();
 
-  mTex.bind();
-  mVertexBuffer.bind();
+  mUploadToVBOTimer.start();
+  mGltfModel->uploadVertexBuffers();
+  mUploadToVBOTimer.stop();
 
-  mVertexBuffer.draw(GL_TRIANGLES, 0, mRenderData.rdTriangleCount * 3);
-  mVertexBuffer.unbind();
-  mTex.unbind();
+  //mChangedShader.use();
+
+  //mTex.bind();
+  //mVertexBuffer.bind();
+
+  //mVertexBuffer.draw(GL_TRIANGLES, 0, mRenderData.rdTriangleCount * 3);
+
+
+
+  //mVertexBuffer.unbind();
+  //mTex.unbind();
+
+  mGltfShader.use();
+  mGltfModel->draw();
+
 
   mFramebuffer.unbind();
 
@@ -208,6 +240,9 @@ void OGLRenderer::draw() {
 }
 
 void OGLRenderer::cleanup() {
+    mGltfModel->cleanup();
+    mGltfModel.reset();
+    mGltfShader.cleanup();
     mUserInterface.cleanup();
     mBasicShader.cleanup();
     mChangedShader.cleanup();

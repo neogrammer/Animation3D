@@ -82,7 +82,8 @@ void UserInterface::createFrame(OGLRenderData &renderData) {
   ImGui::SameLine();
   ImGui::Text("x: %s, y: %s, z: %s", std::to_string(renderData.rdCameraWorldPosition.x).c_str(), std::to_string(renderData.rdCameraWorldPosition.y).c_str(), std::to_string(renderData.rdCameraWorldPosition.z).c_str());
 
-
+  ImGui::Separator();
+  ImGui::Text("%s", std::to_string(renderData.rdTriangleCount + renderData.rdGltfTriangleCount).c_str());
 
   ImGui::Separator();
 
