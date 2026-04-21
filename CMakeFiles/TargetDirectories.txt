@@ -1,5 +1,6 @@
 C:/dev/animation/CMakeFiles/Main.dir
 C:/dev/animation/CMakeFiles/Shaders.dir
+C:/dev/animation/CMakeFiles/Assets.dir
 C:/dev/animation/CMakeFiles/Textures.dir
 C:/dev/animation/CMakeFiles/ALL_BUILD.dir
 C:/dev/animation/CMakeFiles/ZERO_CHECK.dir

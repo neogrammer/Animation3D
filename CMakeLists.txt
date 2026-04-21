@@ -44,6 +44,7 @@ file(GLOB SOURCES
   opengl/*.cpp
   model/*.cpp
   imgui/*.cpp
+  src/tinygltf.cc
 )
 add_executable(Main ${SOURCES})
 
@@ -72,6 +73,24 @@ add_custom_command(TARGET Shaders POST_BUILD
   "$<TARGET_PROPERTY:Main,BINARY_DIR>/$<CONFIGURATION>/shader"
 )
 
+file(GLOB ASSET_FILES 
+  assets/* 
+)
+
+add_custom_target(
+  Assets
+  DEPENDS ${ASSET_FILES}
+)
+
+add_dependencies(Main Assets)
+
+add_custom_command(TARGET Assets POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+  "$<TARGET_PROPERTY:Main,SOURCE_DIR>/assets"
+  "$<TARGET_PROPERTY:Main,BINARY_DIR>/$<CONFIGURATION>/assets"
+)
+
+
 # copy textures
 file(GLOB TEX_SOURCE_FILES
   textures/*
@@ -88,6 +107,8 @@ add_custom_command(TARGET Textures POST_BUILD
   "$<TARGET_PROPERTY:Main,SOURCE_DIR>/textures"
   "$<TARGET_PROPERTY:Main,BINARY_DIR>/$<CONFIGURATION>/textures"
 )
+
+
 
 # variable is set by FindGLFW3.cmake, reuse for Linux
 if(UNIX)

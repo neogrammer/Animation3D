@@ -44,6 +44,6 @@ struct OGLRenderData {
 
   float rdTickDiff = 0.f;
 
-  glm::vec3 rdCameraWorldPosition = { 0.f,0.f,0.f };
+  glm::vec3 rdCameraWorldPosition = { 0.f,0.f,2.f };
 
 };
