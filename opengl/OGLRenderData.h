@@ -24,28 +24,36 @@ struct OGLRenderData {
   int rdHeight = 0;
 
   unsigned int rdTriangleCount = 0;
+  unsigned int rdGltfTriangleCount = 0;
 
-  int rdFieldOfView = 90;
-
-  bool rdUseChangedShader = false;
+  int rdFieldOfView = 60;
 
   float rdFrameTime = 0.0f;
   float rdMatrixGenerateTime = 0.0f;
+  float rdUploadToVBOTime = 0.0f;
   float rdUploadToUBOTime = 0.0f;
   float rdUIGenerateTime = 0.0f;
   float rdUIDrawTime = 0.0f;
-
-  float rdViewAzimuth = 0.f;
-  float rdViewElevation = 0.f;
 
   int rdMoveForward = 0;
   int rdMoveRight = 0;
   int rdMoveUp = 0;
 
-  float rdTickDiff = 0.f;
+  float rdTickDiff = 0.0f;
 
-  glm::vec3 rdCameraWorldPosition = { 0.f,0.f,2.f };
+  float rdViewAzimuth = 0.0f;
+  float rdViewElevation = 0.0f;
+  glm::vec3 rdCameraWorldPosition = glm::vec3(-0.5f, 2.5f, 6.0f);
 
-  unsigned int rdGltfTriangleCount = 0;
+  bool rdDrawWorldCoordArrows = true;
+  bool rdDrawModelCoordArrows = true;
+  bool rdResetAngles = false;
 
+  int rdRotXAngle = 0;
+  int rdRotYAngle = 0;
+  int rdRotZAngle = 0;
+
+  bool rdDrawGltfModel = true;
+  bool rdDrawSkeleton = true;
+  bool rdEnableVertexSkinning = true;
 };

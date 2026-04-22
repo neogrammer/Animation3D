@@ -1,28 +1,33 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 #include <glm/gtc/matrix_transform.hpp>
+
 #include "Camera.h"
 
+glm::mat4 Camera::getViewMatrix(OGLRenderData &renderData) {
+  float azimRad = glm::radians(renderData.rdViewAzimuth);
+  float elevRad = glm::radians(renderData.rdViewElevation);
 
+  float sinAzim = glm::sin(azimRad);
+  float cosAzim = glm::cos(azimRad);
+  float sinElev = glm::sin(elevRad);
+  float cosElev = glm::cos(elevRad);
 
-glm::mat4 Camera::getViewMatrix(OGLRenderData& renderData)
-{
-	float azimRad = glm::radians(renderData.rdViewAzimuth);
-	float elevRad = glm::radians(renderData.rdViewElevation);
+  /* update view direction */
+  mViewDirection = glm::normalize(glm::vec3(
+     sinAzim * cosElev, sinElev, -cosAzim * cosElev));
 
-	float sinAzim = glm::sin(azimRad);
-	float cosAzim = glm::cos(azimRad);
-	float sinElev = glm::sin(elevRad);
-	float cosElev = glm::cos(elevRad);
+  /* calculate right and up direction */
+  mRightDirection = glm::normalize(glm::cross(mViewDirection, mWorldUpVector));
+  mUpDirection = glm::normalize(glm::cross(mRightDirection, mViewDirection));
 
-	mViewDirection = glm::normalize(glm::vec3(sinAzim * cosElev,sinElev,-cosAzim * cosElev));
+  /* update camera position depending on desired movement */
+  renderData.rdCameraWorldPosition +=
+    renderData.rdMoveForward * renderData.rdTickDiff * mViewDirection
+    + renderData.rdMoveRight * renderData.rdTickDiff * mRightDirection
+    + renderData.rdMoveUp * renderData.rdTickDiff * mUpDirection;
 
-	mRightDirection = glm::normalize(glm::cross(mViewDirection, mWorldUpVector));
-	mUpDirection = glm::normalize(glm::cross(mRightDirection, mViewDirection));
-
-	renderData.rdCameraWorldPosition += renderData.rdMoveForward * renderData.rdTickDiff * mViewDirection + 
-		renderData.rdMoveRight * renderData.rdTickDiff * mRightDirection + 
-		renderData.rdMoveUp * renderData.rdTickDiff * mUpDirection;
-
-
-	return glm::lookAt(renderData.rdCameraWorldPosition, renderData.rdCameraWorldPosition + mViewDirection, mUpDirection);
-
+  return glm::lookAt(renderData.rdCameraWorldPosition,
+    renderData.rdCameraWorldPosition + mViewDirection, mUpDirection);
 }

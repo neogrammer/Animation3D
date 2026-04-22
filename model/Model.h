@@ -6,10 +6,9 @@
 
 class Model {
   public:
-    void init();
-
     OGLMesh getVertexData();
 
   private:
+    void init();
     OGLMesh mVertexData;
 };

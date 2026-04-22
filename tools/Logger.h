@@ -1,5 +1,4 @@
 /* simple Logger class */
-
 #pragma once
 #include <cstdio>
 
