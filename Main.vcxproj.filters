@@ -67,6 +67,15 @@
     <ClCompile Include="model\GltfModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="model\ArrowModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model\CoordArrowsModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model\GltfNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\dev\animation\CMakeLists.txt" />

@@ -356,7 +356,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\dev\animation\tools\Logger.cpp" />
     <ClCompile Include="C:\dev\animation\tools\Timer.cpp" />
     <ClCompile Include="C:\dev\animation\window\Window.cpp" />
+    <ClCompile Include="model\ArrowModel.cpp" />
+    <ClCompile Include="model\CoordArrowsModel.cpp" />
     <ClCompile Include="model\GltfModel.cpp" />
+    <ClCompile Include="model\GltfNode.cpp" />
     <ClCompile Include="src\tiny_gltf.cc" />
   </ItemGroup>
   <ItemGroup>

@@ -193,7 +193,7 @@ void OGLRenderer::draw() {
   }
   else {
       mChangedShader.use();
-      //model = glm::rotate(glm::mat4(1.0f), -t, glm::vec3(0.0f, 0.0f, 1.0f));
+      // model = glm::rotate(glm::mat4(1.0f), -t, glm::vec3(0.0f, 0.0f, 1.0f));
 
   }
   mViewMatrix = mCamera.getViewMatrix(mRenderData) * model;
